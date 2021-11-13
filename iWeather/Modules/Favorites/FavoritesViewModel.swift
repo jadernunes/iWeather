@@ -11,6 +11,8 @@ protocol FavoritesViewModelProtocol {
     var title: String { get }
 
     func openSearch()
+    func openDetail()
+    func remove(index: Int)
 }
 
 final class FavoritesViewModel: FavoritesViewModelProtocol {
@@ -29,7 +31,15 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
 
     // MARK: - Custom methods
 
+    func remove(index: Int) {
+        //TODO: handle
+    }
+
     func openSearch() {
         coordinator?.openSearch()
+    }
+
+    func openDetail() {
+        coordinator?.openDetail()
     }
 }

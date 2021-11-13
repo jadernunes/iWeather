@@ -9,17 +9,18 @@ import UIKit
 
 protocol FavoritesCoordinatorProtocol: Coordinator {
     func openSearch()
+    func openDetail()
 }
 
 final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
 
     // MARK: - Attributes
 
-    private weak var presenter: UIWindow?
+    private weak var presenter: UINavigationController?
 
     // MARK: - Life cycle
 
-    init(presenter: UIWindow) {
+    init(presenter: UINavigationController) {
         self.presenter = presenter
     }
 
@@ -28,12 +29,16 @@ final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
     func start() {
         let viewModel = FavoritesViewModel(coordinator: self)
         let viewController = FavoritesViewController(viewModel: viewModel)
-        let navigation = UINavigationController(rootViewController: viewController)
-        presenter?.rootViewController = navigation
-        presenter?.makeKeyAndVisible()
+        presenter?.viewControllers = [viewController]
     }
 
     func openSearch() {
-        //TODO: Handle
+        guard let navigation = presenter else { return }
+        let coordinator = SearchCoordinator(presenter: navigation)
+        coordinator.start()
+    }
+
+    func openDetail() {
+        //TODO: handle
     }
 }
