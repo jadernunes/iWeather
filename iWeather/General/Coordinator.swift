@@ -7,6 +7,7 @@
 
 protocol Coordinator {
     func close()
+    func start()
 }
 
 extension Coordinator {

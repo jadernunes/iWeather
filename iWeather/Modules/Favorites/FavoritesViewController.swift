@@ -13,13 +13,6 @@ final class FavoritesViewController: UIViewController {
 
     private let viewModel: FavoritesViewModelProtocol
 
-    // MARK: - Elements
-
-    private let searchButton = UIBarButtonItem(image: R.image.iconPlus(),
-                                               style: .done,
-                                               target: self,
-                                               action: #selector(searchButtonPressed))
-
     // MARK: - Life cycle
 
     init(viewModel: FavoritesViewModelProtocol) {
@@ -67,6 +60,10 @@ extension FavoritesViewController {
     }
 
     private func createSearchButton() {
+        let searchButton = UIBarButtonItem(image: R.image.iconSearch(),
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(searchButtonPressed))
         navigationItem.rightBarButtonItems = [searchButton]
     }
 }

@@ -42,9 +42,12 @@ final class AppCoordinator: Coordinator {
     }
 
     private func openFavorites() {
-        guard let window = window else { return }
-        let coodinator = FavoritesCoordinator(presenter: window)
+        let navigation = UINavigationController()
+        let coodinator = FavoritesCoordinator(presenter: navigation)
         coodinator.start()
+
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
     }
 }
 
