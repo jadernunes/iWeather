@@ -9,20 +9,20 @@ import UIKit
 
 final class Config {
 
-  // MARK: - Attributes
+    // MARK: - Attributes
 
-  static let baseURL: String = {
-    configKey(key: "urlbase")
-  }()
+    static let baseURL: String = {
+        configKey(key: "urlbase")
+    }()
 
-  // MARK: - Custom methods
+    // MARK: - Custom methods
 
-  private static func configKey(key: String) -> String {
-    guard
-      let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
-      let dictionary = NSDictionary(contentsOfFile: path) as? [String: Any],
-      let value = dictionary[key] as? String
-    else { return "" }
-    return value
-  }
+    private static func configKey(key: String) -> String {
+        guard
+            let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+            let dictionary = NSDictionary(contentsOfFile: path) as? [String: Any],
+            let value = dictionary[key] as? String
+        else { return "" }
+        return value
+    }
 }

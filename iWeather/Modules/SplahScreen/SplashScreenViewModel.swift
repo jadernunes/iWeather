@@ -6,24 +6,24 @@
 //
 
 protocol SplashScreenViewModelProtocol {
-  func openMainApp()
+    func openMainApp()
 }
 
 final class SplashScreenViewModel: SplashScreenViewModelProtocol {
+    
+    // MARK: - Attributes
 
-  // MARK: - Attributes
+    private let coordinator: SplashScreenCoordinatorProtocol?
 
-  private let coordinator: SplashScreenCoordinatorProtocol?
+    // MARK: - Life cycle
 
-  // MARK: - Life cycle
+    init(coordinator: SplashScreenCoordinatorProtocol? = nil) {
+        self.coordinator = coordinator
+    }
 
-  init(coordinator: SplashScreenCoordinatorProtocol? = nil) {
-    self.coordinator = coordinator
-  }
+    // MARK: - Custom methods
 
-  // MARK: - Custom methods
-
-  func openMainApp() {
-    coordinator?.openMainApp()
-  }
+    func openMainApp() {
+        coordinator?.openMainApp()
+    }
 }

@@ -9,9 +9,9 @@ import UIKit
 
 func initElement<T: UIView>(configure: ((T) -> Void)? = nil) -> T {
 
-  let component = T()
-  component.translatesAutoresizingMaskIntoConstraints = false
-  configure?(component)
-
-  return component
+    let component = T()
+    component.translatesAutoresizingMaskIntoConstraints = false
+    configure?(component)
+    
+    return component
 }

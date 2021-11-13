@@ -9,14 +9,14 @@ import UIKit
 
 extension UIColor {
 
-  // MARK: - Custom colors
+    // MARK: - Custom colors
 
-  static let clGray = gray
-  static let clSecondary = white
-  static let clSeparator = lightGray
-  static let clNoData = lightGray.withAlphaComponent(0.3)
-  static let clBlack = black
+    static let clGray = gray
+    static let clSecondary = white
+    static let clSeparator = lightGray
+    static let clNoData = lightGray.withAlphaComponent(0.3)
+    static let clBlack = black
 
-  /// HEX: #FF5229
-  static let clPrimary = UIColor(named: "primary") ?? white
+    /// HEX: #FF5229
+    static let clPrimary = UIColor(named: "primary") ?? white
 }
