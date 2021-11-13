@@ -8,5 +8,5 @@
 import Foundation
 
 enum InitialFlow: CaseIterable {
-  case splash, home
+    case splash, favorites
 }

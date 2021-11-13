@@ -8,8 +8,8 @@
 import Foundation
 
 enum HTTPMethodType: String, CaseIterable {
-  case get = "GET"
-  case post = "POST"
-  case patch = "PATCH"
-  case delete = "DELETE"
+    case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    case delete = "DELETE"
 }

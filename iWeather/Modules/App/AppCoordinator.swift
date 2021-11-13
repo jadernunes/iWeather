@@ -9,48 +9,50 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
 
-  // MARK: - Attributes
+    // MARK: - Attributes
 
-  private let window: UIWindow?
-  private let initialFlow: InitialFlow
+    private let window: UIWindow?
+    private let initialFlow: InitialFlow
 
-  // MARK: - Life cycle
+    // MARK: - Life cycle
 
-  init(window: UIWindow?, initialFlow: InitialFlow = .splash) {
-    self.window = window
-    self.initialFlow = initialFlow
-  }
-
-  // MARK: - Attributes
-
-  func start() {
-    switch initialFlow {
-      case .splash:
-        openSplashScreen()
-      case .home:
-        openHome()
+    init(window: UIWindow?, initialFlow: InitialFlow = .splash) {
+        self.window = window
+        self.initialFlow = initialFlow
     }
-  }
 
-  // MARK: - Navigations
+    // MARK: - Attributes
 
-  private func openSplashScreen() {
-    guard let window = window else { return }
-    let coodinator = SplashScreenCoordinator(presenter: window)
-    coodinator.delegate = self
-    coodinator.start()
-  }
+    func start() {
+        switch initialFlow {
+            case .splash:
+                openSplashScreen()
+            case .favorites:
+                openFavorites()
+        }
+    }
 
-  private func openHome() {
-    //TODO: handle
-  }
+    // MARK: - Navigations
+
+    private func openSplashScreen() {
+        guard let window = window else { return }
+        let coodinator = SplashScreenCoordinator(presenter: window)
+        coodinator.delegate = self
+        coodinator.start()
+    }
+
+    private func openFavorites() {
+        guard let window = window else { return }
+        let coodinator = FavoritesCoordinator(presenter: window)
+        coodinator.start()
+    }
 }
 
 // MARK: - SplashScreen delegate
 
 extension AppCoordinator: SplashScreenCoordinatorDelegate {
 
-  func didFinishSplashScreen() {
-    openHome()
-  }
+    func didFinishSplashScreen() {
+        openFavorites()
+    }
 }

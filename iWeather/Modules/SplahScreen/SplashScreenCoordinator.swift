@@ -8,36 +8,36 @@
 import UIKit
 
 protocol SplashScreenCoordinatorDelegate: AnyObject {
-  func didFinishSplashScreen()
+    func didFinishSplashScreen()
 }
 
 protocol SplashScreenCoordinatorProtocol: Coordinator {
-  func openMainApp()
+    func openMainApp()
 }
 
 final class SplashScreenCoordinator: SplashScreenCoordinatorProtocol {
 
-  // MARK: - Attributes
+    // MARK: - Attributes
 
-  private weak var presenter: UIWindow?
-  weak var delegate: SplashScreenCoordinatorDelegate?
+    private weak var presenter: UIWindow?
+    weak var delegate: SplashScreenCoordinatorDelegate?
 
-  // MARK: - Life cycle
+    // MARK: - Life cycle
 
-  init(presenter: UIWindow) {
-    self.presenter = presenter
-  }
+    init(presenter: UIWindow) {
+        self.presenter = presenter
+    }
 
-  // MARK: - Custom methods
+    // MARK: - Custom methods
 
-  func start() {
-    let viewModel = SplashScreenViewModel(coordinator: self)
-    let viewController = SplashScreenViewController(viewModel: viewModel)
-    presenter?.rootViewController = viewController
-    presenter?.makeKeyAndVisible()
-  }
+    func start() {
+        let viewModel = SplashScreenViewModel(coordinator: self)
+        let viewController = SplashScreenViewController(viewModel: viewModel)
+        presenter?.rootViewController = viewController
+        presenter?.makeKeyAndVisible()
+    }
 
-  func openMainApp() {
-    delegate?.didFinishSplashScreen()
-  }
+    func openMainApp() {
+        delegate?.didFinishSplashScreen()
+    }
 }

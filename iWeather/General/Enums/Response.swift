@@ -6,6 +6,6 @@
 //
 
 enum Response<T> {
-  case success(T)
-  case failure(error: ErrorRequest, statusCode: HTTPStatusCode? = nil)
+    case success(T)
+    case failure(error: ErrorRequest, statusCode: HTTPStatusCode? = nil)
 }

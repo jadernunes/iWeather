@@ -9,8 +9,8 @@ import Foundation
 
 extension JSONDecoder {
 
-  static let decoder: JSONDecoder = {
-    $0.dateDecodingStrategy = .formatted(.dateFormatterReveiced)
-    return $0
-  }(JSONDecoder())
+    static let decoder: JSONDecoder = {
+        $0.dateDecodingStrategy = .formatted(.dateFormatterReveiced)
+        return $0
+    }(JSONDecoder())
 }
