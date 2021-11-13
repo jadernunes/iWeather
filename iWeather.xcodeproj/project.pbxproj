@@ -15,6 +15,9 @@
 		6B5EB3FD27403E590057CFAB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B5EB3FC27403E590057CFAB /* README.md */; };
 		6B5EB40427403EF50057CFAB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B5EB40627403EF50057CFAB /* Localizable.strings */; };
 		6B5EB40E27403FC40057CFAB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB40D27403FC40057CFAB /* R.generated.swift */; };
+		6B5EB41E274046740057CFAB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB41D274046740057CFAB /* Coordinator.swift */; };
+		6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB4232740469D0057CFAB /* AppCoordinator.swift */; };
+		6B5EB429274046C20057CFAB /* InitialFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB428274046C20057CFAB /* InitialFlow.swift */; };
 		796659FC05E9F0E2F4211078 /* Pods_iWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */; };
 		CC76EC49BE93DAF50792706E /* Pods_iWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +47,9 @@
 		6B5EB3FC27403E590057CFAB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6B5EB40527403EF50057CFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B5EB40D27403FC40057CFAB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		6B5EB41D274046740057CFAB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6B5EB4232740469D0057CFAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6B5EB428274046C20057CFAB /* InitialFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFlow.swift; sourceTree = "<group>"; };
 		73FAD8A0DB8E4A64AA655FEF /* Pods-iWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWeather.release.xcconfig"; path = "Target Support Files/Pods-iWeather/Pods-iWeather.release.xcconfig"; sourceTree = "<group>"; };
 		78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +110,7 @@
 		6B5EB3B127403BE60057CFAB /* iWeather */ = {
 			isa = PBXGroup;
 			children = (
+				6B5EB41C274046660057CFAB /* General */,
 				6B5EB3FA27403DFC0057CFAB /* Targets */,
 				6B5EB3FB27403E030057CFAB /* Resources */,
 				6B5EB411274044B10057CFAB /* Modules */,
@@ -153,6 +160,7 @@
 			children = (
 				6B5EB3B227403BE60057CFAB /* AppDelegate.swift */,
 				6B5EB3B427403BE60057CFAB /* SceneDelegate.swift */,
+				6B5EB4232740469D0057CFAB /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -163,6 +171,23 @@
 				6B5EB3C027403BEE0057CFAB /* Info.plist */,
 			);
 			path = Production;
+			sourceTree = "<group>";
+		};
+		6B5EB41C274046660057CFAB /* General */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB41D274046740057CFAB /* Coordinator.swift */,
+				6B5EB427274046B30057CFAB /* Enums */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		6B5EB427274046B30057CFAB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB428274046C20057CFAB /* InitialFlow.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		F6A593306935A510BFE16888 /* Frameworks */ = {
@@ -400,7 +425,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5EB429274046C20057CFAB /* InitialFlow.swift in Sources */,
+				6B5EB41E274046740057CFAB /* Coordinator.swift in Sources */,
 				6B5EB3B327403BE60057CFAB /* AppDelegate.swift in Sources */,
+				6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */,
 				6B5EB3B527403BE60057CFAB /* SceneDelegate.swift in Sources */,
 				6B5EB40E27403FC40057CFAB /* R.generated.swift in Sources */,
 			);
