@@ -35,10 +35,22 @@ final class AppCoordinator: Coordinator {
   // MARK: - Navigations
 
   private func openSplashScreen() {
-    //TODO: handle
+    guard let window = window else { return }
+    let coodinator = SplashScreenCoordinator(presenter: window)
+    coodinator.delegate = self
+    coodinator.start()
   }
 
   private func openHome() {
     //TODO: handle
+  }
+}
+
+// MARK: - SplashScreen delegate
+
+extension AppCoordinator: SplashScreenCoordinatorDelegate {
+
+  func didFinishSplashScreen() {
+    openHome()
   }
 }

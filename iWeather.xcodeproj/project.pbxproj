@@ -18,6 +18,13 @@
 		6B5EB41E274046740057CFAB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB41D274046740057CFAB /* Coordinator.swift */; };
 		6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB4232740469D0057CFAB /* AppCoordinator.swift */; };
 		6B5EB429274046C20057CFAB /* InitialFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB428274046C20057CFAB /* InitialFlow.swift */; };
+		6B5EB438274049B80057CFAB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB437274049B80057CFAB /* SplashScreenViewController.swift */; };
+		6B5EB43C274049CC0057CFAB /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB43B274049CC0057CFAB /* SplashScreenViewModel.swift */; };
+		6B5EB440274049EA0057CFAB /* SplashScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB43F274049EA0057CFAB /* SplashScreenCoordinator.swift */; };
+		6B5EB44527404A250057CFAB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB44427404A250057CFAB /* UIView+Extension.swift */; };
+		6B5EB44927404A8D0057CFAB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB44827404A8D0057CFAB /* UIViewController+Extension.swift */; };
+		6B5EB44D27404AAD0057CFAB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB44C27404AAD0057CFAB /* UIColor+Extension.swift */; };
+		6B5EB45127404B7C0057CFAB /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB45027404B7C0057CFAB /* UIFont+Extension.swift */; };
 		796659FC05E9F0E2F4211078 /* Pods_iWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */; };
 		CC76EC49BE93DAF50792706E /* Pods_iWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +57,13 @@
 		6B5EB41D274046740057CFAB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6B5EB4232740469D0057CFAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6B5EB428274046C20057CFAB /* InitialFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFlow.swift; sourceTree = "<group>"; };
+		6B5EB437274049B80057CFAB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		6B5EB43B274049CC0057CFAB /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		6B5EB43F274049EA0057CFAB /* SplashScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenCoordinator.swift; sourceTree = "<group>"; };
+		6B5EB44427404A250057CFAB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB44827404A8D0057CFAB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB44C27404AAD0057CFAB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB45027404B7C0057CFAB /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		73FAD8A0DB8E4A64AA655FEF /* Pods-iWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWeather.release.xcconfig"; path = "Target Support Files/Pods-iWeather/Pods-iWeather.release.xcconfig"; sourceTree = "<group>"; };
 		78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5EB41C274046660057CFAB /* General */,
+				6B5EB44327404A110057CFAB /* Extensions */,
 				6B5EB3FA27403DFC0057CFAB /* Targets */,
 				6B5EB3FB27403E030057CFAB /* Resources */,
 				6B5EB411274044B10057CFAB /* Modules */,
@@ -151,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5EB412274044C30057CFAB /* App */,
+				6B5EB436274049980057CFAB /* SplahScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -188,6 +204,27 @@
 				6B5EB428274046C20057CFAB /* InitialFlow.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		6B5EB436274049980057CFAB /* SplahScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB437274049B80057CFAB /* SplashScreenViewController.swift */,
+				6B5EB43B274049CC0057CFAB /* SplashScreenViewModel.swift */,
+				6B5EB43F274049EA0057CFAB /* SplashScreenCoordinator.swift */,
+			);
+			path = SplahScreen;
+			sourceTree = "<group>";
+		};
+		6B5EB44327404A110057CFAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB44427404A250057CFAB /* UIView+Extension.swift */,
+				6B5EB44827404A8D0057CFAB /* UIViewController+Extension.swift */,
+				6B5EB44C27404AAD0057CFAB /* UIColor+Extension.swift */,
+				6B5EB45027404B7C0057CFAB /* UIFont+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F6A593306935A510BFE16888 /* Frameworks */ = {
@@ -426,10 +463,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5EB429274046C20057CFAB /* InitialFlow.swift in Sources */,
+				6B5EB44927404A8D0057CFAB /* UIViewController+Extension.swift in Sources */,
 				6B5EB41E274046740057CFAB /* Coordinator.swift in Sources */,
+				6B5EB44D27404AAD0057CFAB /* UIColor+Extension.swift in Sources */,
+				6B5EB438274049B80057CFAB /* SplashScreenViewController.swift in Sources */,
 				6B5EB3B327403BE60057CFAB /* AppDelegate.swift in Sources */,
 				6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */,
+				6B5EB43C274049CC0057CFAB /* SplashScreenViewModel.swift in Sources */,
+				6B5EB440274049EA0057CFAB /* SplashScreenCoordinator.swift in Sources */,
 				6B5EB3B527403BE60057CFAB /* SceneDelegate.swift in Sources */,
+				6B5EB45127404B7C0057CFAB /* UIFont+Extension.swift in Sources */,
+				6B5EB44527404A250057CFAB /* UIView+Extension.swift in Sources */,
 				6B5EB40E27403FC40057CFAB /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,18 +20,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="lUL-00-xx5">
                                 <rect key="frame" x="103.5" y="349.5" width="207" height="207"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="lUL-00-xx5" secondAttribute="height" id="uKZ-Ia-7OF"/>
+                                    <constraint firstAttribute="width" secondItem="lUL-00-xx5" secondAttribute="height" id="TuF-WY-hKz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lUL-00-xx5" secondAttribute="bottom" constant="16" id="AGw-jP-tH1"/>
-                            <constraint firstItem="lUL-00-xx5" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" priority="750" id="DxQ-D6-Xh1"/>
+                            <constraint firstItem="lUL-00-xx5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Y3W-Rt-l7M"/>
                             <constraint firstItem="lUL-00-xx5" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="blc-gb-Bv7"/>
                             <constraint firstItem="lUL-00-xx5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hKb-15-hi1"/>
-                            <constraint firstItem="lUL-00-xx5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="rrs-al-RfG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lUL-00-xx5" secondAttribute="bottom" constant="24" id="n51-nG-1mN"/>
+                            <constraint firstItem="lUL-00-xx5" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="zxg-I7-b6L"/>
                         </constraints>
                     </view>
                 </viewController>
