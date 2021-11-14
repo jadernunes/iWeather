@@ -23,7 +23,7 @@ final class DetailCoordinator: DetailCoordinatorProtocol {
 
     // MARK: - Custom methods
 
-    func start(woeid: Int) {
+    func start(woeid: Int64) {
         let viewModel = DetailViewModel(coordinator: self, woeid: woeid)
         let viewController = DetailViewController(viewModel: viewModel)
         presenter?.pushViewController(viewController, animated: true)

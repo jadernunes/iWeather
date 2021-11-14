@@ -8,5 +8,5 @@
 import Foundation
 
 enum DetailState {
-    case idle, loading, empty, error, content
+    case idle, loading, empty, error, content(viewModel: InfoWeatherViewModelProtocol)
 }

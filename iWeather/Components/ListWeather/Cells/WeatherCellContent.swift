@@ -24,7 +24,7 @@ final class WeatherCellContent: UIView {
         $0.addShadow()
     }
     private let titleLabel: UILabel = initElement {
-        $0.font = .title
+        $0.font = .subTitle
         $0.textColor = .clPrimary
     }
 
@@ -74,14 +74,14 @@ extension WeatherCellContent: Component {
         switch configuration {
             case .content(let viewModel):
                 self.viewModel = viewModel
-                setupComponent()
+                populdateUI()
 
             case .prepareForReuse:
                 titleLabel.text = nil
         }
     }
 
-    private func setupComponent() {
+    private func populdateUI() {
         titleLabel.text = viewModel?.title
     }
 }

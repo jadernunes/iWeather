@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherSearch: Codable {
-    let distance: Int
+    let distance: Int64
     let title: String
-    let woeid: Int
+    let woeid: Int64
 }

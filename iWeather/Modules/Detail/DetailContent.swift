@@ -13,6 +13,7 @@ final class DetailContent: UIView {
 
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
+    private let infoComponent: InfoWeatherComponent = initElement()
 
     // MARK: - Life cycle
 
@@ -34,6 +35,7 @@ final class DetailContent: UIView {
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
+        addSubview(infoComponent)
     }
 }
 
@@ -44,6 +46,7 @@ extension DetailContent {
     private func defineSubviewsConstraints() {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
+        infoComponent.anchor(self)
     }
 }
 
@@ -57,14 +60,18 @@ extension DetailContent: Component {
                 stopLoader()
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
+                infoComponent.isHidden = true
 
             case .loading:
                 startLoader(style: .large)
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
+                infoComponent.isHidden = true
 
-            case .content:
+            case .content(let viewModel):
                 stopLoader()
+                infoComponent.isVisible = true
+                infoComponent.render(with: .content(viewModel: viewModel))
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
@@ -72,11 +79,13 @@ extension DetailContent: Component {
                 stopLoader()
                 errorComponent.isVisible = true
                 emptyComponent.isHidden = true
+                infoComponent.isHidden = true
 
             case .empty:
                 stopLoader()
-                errorComponent.isHidden = true
                 emptyComponent.isVisible = true
+                errorComponent.isHidden = true
+                infoComponent.isHidden = true
         }
     }
 }

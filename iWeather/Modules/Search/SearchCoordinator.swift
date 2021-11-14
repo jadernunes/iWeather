@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchCoordinatorProtocol: Coordinator {
-    func openDetail(woeid: Int)
+    func openDetail(woeid: Int64)
 }
 
 final class SearchCoordinator: SearchCoordinatorProtocol {
@@ -31,7 +31,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
         presenter?.pushViewController(viewController, animated: true)
     }
 
-    func openDetail(woeid: Int) {
+    func openDetail(woeid: Int64) {
         guard let navigation = presenter else { return }
         let coordinator = DetailCoordinator(presenter: navigation)
         coordinator.start(woeid: woeid)
