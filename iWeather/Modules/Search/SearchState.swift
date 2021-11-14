@@ -7,6 +7,19 @@
 
 import Foundation
 
-enum SearchState {
+enum SearchState: Equatable {
     case idle, loading, empty, error, content(viewModel: ListWeatherViewModelProtocol)
+
+    static func == (lhs: SearchState, rhs: SearchState) -> Bool {
+        switch (lhs, rhs) {
+            case (idle, idle),
+                 (loading, loading),
+                 (empty, empty),
+                 (error, error),
+                 (content(_), content(_)):
+                return true
+            default:
+                return false
+        }
+    }
 }
