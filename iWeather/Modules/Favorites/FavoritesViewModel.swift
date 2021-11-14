@@ -7,7 +7,7 @@
 
 import Rswift
 
-protocol FavoritesViewModelProtocol {
+protocol FavoritesViewModelProtocol: AnyObject {
     var title: String { get }
     var state: Dynamic<FavoritesState> { get }
 

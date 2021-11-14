@@ -22,6 +22,8 @@ final class DetailViewController: UIViewController {
     init(viewModel: DetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+
+        content.viewModel = viewModel
     }
 
     @available(*, unavailable)

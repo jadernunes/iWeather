@@ -11,6 +11,7 @@ final class SearchContent: UIView {
 
     // MARK: - Elements
 
+    weak var viewModel: SearchViewModelProtocol?
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
     private let listWeatherComponent: ListWeatherComponent = initElement()
@@ -32,6 +33,7 @@ final class SearchContent: UIView {
     // MARK: - Custom methods
 
     private func defineSubviews() {
+        errorComponent.delegate = self
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
@@ -47,6 +49,15 @@ extension SearchContent {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
         listWeatherComponent.anchor(self)
+    }
+}
+
+// MARK: - Error delegate
+
+extension SearchContent: ErrorComponentDelegate {
+
+    func willRetry() {
+        viewModel?.loadData()
     }
 }
 

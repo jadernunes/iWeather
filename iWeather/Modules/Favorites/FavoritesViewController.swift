@@ -22,6 +22,8 @@ final class FavoritesViewController: UIViewController {
     init(viewModel: FavoritesViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+
+        content.viewModel = viewModel
     }
 
     @available(*, unavailable)
