@@ -68,4 +68,3 @@ extension FavoritesViewModel: ListWeatherDelegate {
         coordinator?.openDetail(woeid: weather?.woeid ?? -1)
     }
 }
-

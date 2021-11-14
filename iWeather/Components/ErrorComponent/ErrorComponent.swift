@@ -77,7 +77,6 @@ extension ErrorComponent {
 
     private func setupLableConstraints() {
         NSLayoutConstraint.activate([
-            infoLabel.heightAnchor.constraint(equalToConstant: 24),
             infoLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             infoLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             infoLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
@@ -91,7 +90,7 @@ extension ErrorComponent {
             errorImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             errorImage.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
             errorImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            errorImage.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: 4)
+            errorImage.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: -4)
         ])
     }
 
@@ -100,8 +99,6 @@ extension ErrorComponent {
             retryButton.heightAnchor.constraint(equalToConstant: 44),
             retryButton.widthAnchor.constraint(equalTo: errorImage.widthAnchor, multiplier: 0.5),
             retryButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 24),
-            retryButton.leftAnchor.constraint(greaterThanOrEqualTo: leftAnchor, constant: 16),
-            retryButton.rightAnchor.constraint(greaterThanOrEqualTo: rightAnchor, constant: -16),
             retryButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
