@@ -18,6 +18,7 @@ final class SearchViewModel: SearchViewModelProtocol {
 
     private let coordinator: SearchCoordinatorProtocol?
     private let service: SearchServicesProtocol
+    private let favorite: FavoriteProtocol
 
     var title: String { R.string.localizable.searchTitle() }
     let state = Dynamic<SearchState>(.idle)
@@ -25,9 +26,11 @@ final class SearchViewModel: SearchViewModelProtocol {
     // MARK: - Life cycle
 
     init(coordinator: SearchCoordinatorProtocol? = nil,
-         service: SearchServicesProtocol = SearchServices()) {
+         service: SearchServicesProtocol = SearchServices(),
+         favorite: FavoriteProtocol = FavoriteManager()) {
         self.coordinator = coordinator
         self.service = service
+        self.favorite = favorite
     }
 
     // MARK: - Custom methods
@@ -48,7 +51,7 @@ final class SearchViewModel: SearchViewModelProtocol {
         service.request(lat: lat, long: long) { [weak self] response in
             switch response {
                 case .success(let data):
-                    let viewModel = ListWeatherViewModel(data: data)
+                    let viewModel = ListWeatherViewModel(data: data, actions: [.add])
                     viewModel.delegate = self
 
                     self?.state.value = data.count > 0 ? .content(viewModel: viewModel) : .empty
@@ -68,7 +71,8 @@ extension SearchViewModel: ListWeatherDelegate {
     }
 
     func willAddWeather(_ weather: WeatherSearch?) {
-        //TODO: handle
+        guard let weather = weather else { return }
+        favorite.add(model: weather)
         coordinator?.close()
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol FavoritesCoordinatorProtocol: Coordinator {
     func openSearch()
-    func openDetail()
+    func openDetail(woeid: Int64)
 }
 
 final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
@@ -38,7 +38,9 @@ final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
         coordinator.start()
     }
 
-    func openDetail() {
-        //TODO: handle
+    func openDetail(woeid: Int64) {
+        guard let navigation = presenter else { return }
+        let coordinator = DetailCoordinator(presenter: navigation)
+        coordinator.start(woeid: woeid)
     }
 }

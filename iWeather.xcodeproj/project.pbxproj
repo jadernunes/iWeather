@@ -77,6 +77,15 @@
 		6B5EB5922740E5EF0057CFAB /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5912740E5EF0057CFAB /* Calendar+Extension.swift */; };
 		6B5EB5982740EBB00057CFAB /* DateFormatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5972740EBB00057CFAB /* DateFormatType.swift */; };
 		6B5EB59C2740ECD60057CFAB /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB59B2740ECD60057CFAB /* UIImageView+Extension.swift */; };
+		6B5EB5A527411BC90057CFAB /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5A427411BC90057CFAB /* DatabaseManager.swift */; };
+		6B5EB5A927411BE60057CFAB /* ObjectRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5A827411BE60057CFAB /* ObjectRepresentable.swift */; };
+		6B5EB5B327411C360057CFAB /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5B227411C360057CFAB /* JSONEncoder+Extension.swift */; };
+		6B5EB5BB27411CFA0057CFAB /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5BA27411CFA0057CFAB /* FavoriteManager.swift */; };
+		6BF566032741235200FB1BD8 /* FavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF566022741235200FB1BD8 /* FavoriteProtocol.swift */; };
+		6BF566092741236700FB1BD8 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF566082741236700FB1BD8 /* DatabaseProtocol.swift */; };
+		6BF5660D2741252000FB1BD8 /* FavoritesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5660C2741252000FB1BD8 /* FavoritesState.swift */; };
+		6BF566112741268F00FB1BD8 /* FavoritesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF566102741268F00FB1BD8 /* FavoritesContent.swift */; };
+		6BF566172741280800FB1BD8 /* ListTypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF566162741280800FB1BD8 /* ListTypeAction.swift */; };
 		796659FC05E9F0E2F4211078 /* Pods_iWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */; };
 		CC76EC49BE93DAF50792706E /* Pods_iWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */; };
 /* End PBXBuildFile section */
@@ -168,6 +177,15 @@
 		6B5EB5912740E5EF0057CFAB /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		6B5EB5972740EBB00057CFAB /* DateFormatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatType.swift; sourceTree = "<group>"; };
 		6B5EB59B2740ECD60057CFAB /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB5A427411BC90057CFAB /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		6B5EB5A827411BE60057CFAB /* ObjectRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRepresentable.swift; sourceTree = "<group>"; };
+		6B5EB5B227411C360057CFAB /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB5BA27411CFA0057CFAB /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		6BF566022741235200FB1BD8 /* FavoriteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocol.swift; sourceTree = "<group>"; };
+		6BF566082741236700FB1BD8 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		6BF5660C2741252000FB1BD8 /* FavoritesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesState.swift; sourceTree = "<group>"; };
+		6BF566102741268F00FB1BD8 /* FavoritesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContent.swift; sourceTree = "<group>"; };
+		6BF566162741280800FB1BD8 /* ListTypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypeAction.swift; sourceTree = "<group>"; };
 		73FAD8A0DB8E4A64AA655FEF /* Pods-iWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWeather.release.xcconfig"; path = "Target Support Files/Pods-iWeather/Pods-iWeather.release.xcconfig"; sourceTree = "<group>"; };
 		78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +250,8 @@
 				6B5EB44327404A110057CFAB /* Extensions */,
 				6B5EB4C12740839D0057CFAB /* Components */,
 				6B5EB3FA27403DFC0057CFAB /* Targets */,
+				6BF566012741233800FB1BD8 /* Favorite */,
+				6B5EB5A327411BB80057CFAB /* Database */,
 				6B5EB45E274056000057CFAB /* Network */,
 				6B5EB4FF2740ABFC0057CFAB /* Models */,
 				6B5EB3FB27403E030057CFAB /* Resources */,
@@ -308,6 +328,7 @@
 				6B5EB4EC2740A0A40057CFAB /* Utils.swift */,
 				6B5EB4F42740A7CC0057CFAB /* Dynamic.swift */,
 				6B5EB57D2740DF3F0057CFAB /* Formater.swift */,
+				6B5EB5A827411BE60057CFAB /* ObjectRepresentable.swift */,
 				6B5EB427274046B30057CFAB /* Enums */,
 			);
 			path = General;
@@ -343,7 +364,6 @@
 				6B5EB44827404A8D0057CFAB /* UIViewController+Extension.swift */,
 				6B5EB44C27404AAD0057CFAB /* UIColor+Extension.swift */,
 				6B5EB45027404B7C0057CFAB /* UIFont+Extension.swift */,
-				6B5EB4792740570C0057CFAB /* JSONDecoder+Extension.swift */,
 				6B5EB47D274057260057CFAB /* DateFormatter+Extension.swift */,
 				6B5EB481274057690057CFAB /* Encodable+Extension.swift */,
 				6B5EB5212740B92E0057CFAB /* Collection+Extension.swift */,
@@ -354,6 +374,8 @@
 				6B5EB58D2740E5300057CFAB /* Date+Extension.swift */,
 				6B5EB5912740E5EF0057CFAB /* Calendar+Extension.swift */,
 				6B5EB59B2740ECD60057CFAB /* UIImageView+Extension.swift */,
+				6B5EB4792740570C0057CFAB /* JSONDecoder+Extension.swift */,
+				6B5EB5B227411C360057CFAB /* JSONEncoder+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +392,8 @@
 		6B5EB491274069AB0057CFAB /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				6BF5660C2741252000FB1BD8 /* FavoritesState.swift */,
+				6BF566102741268F00FB1BD8 /* FavoritesContent.swift */,
 				6B5EB492274069C40057CFAB /* FavoritesViewController.swift */,
 				6B5EB496274069D20057CFAB /* FavoritesViewModel.swift */,
 				6B5EB49A274069DF0057CFAB /* FavoritesCoordinator.swift */,
@@ -439,6 +463,7 @@
 		6B5EB50C2740B1870057CFAB /* ListWeather */ = {
 			isa = PBXGroup;
 			children = (
+				6BF566162741280800FB1BD8 /* ListTypeAction.swift */,
 				6B5EB50D2740B1BB0057CFAB /* ListWeatherComponent.swift */,
 				6B5EB51D2740B8450057CFAB /* ListWeatherViewModel.swift */,
 				6B5EB5272740BC320057CFAB /* Cells */,
@@ -485,6 +510,24 @@
 				6B5EB5792740D56F0057CFAB /* DetailResources.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		6B5EB5A327411BB80057CFAB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB5A427411BC90057CFAB /* DatabaseManager.swift */,
+				6BF566082741236700FB1BD8 /* DatabaseProtocol.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6BF566012741233800FB1BD8 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				6BF566022741235200FB1BD8 /* FavoriteProtocol.swift */,
+				6B5EB5BA27411CFA0057CFAB /* FavoriteManager.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		F6A593306935A510BFE16888 /* Frameworks */ = {
@@ -725,6 +768,7 @@
 			files = (
 				6B5EB5222740B92E0057CFAB /* Collection+Extension.swift in Sources */,
 				6B5EB5052740AD230057CFAB /* SearchResources.swift in Sources */,
+				6B5EB5A527411BC90057CFAB /* DatabaseManager.swift in Sources */,
 				6B5EB5382740C0520057CFAB /* UITableView+Extension.swift in Sources */,
 				6B5EB53C2740C0700057CFAB /* NSObject+Extension.swift in Sources */,
 				6B5EB429274046C20057CFAB /* InitialFlow.swift in Sources */,
@@ -741,8 +785,10 @@
 				6B5EB44927404A8D0057CFAB /* UIViewController+Extension.swift in Sources */,
 				6B5EB4ED2740A0A40057CFAB /* Utils.swift in Sources */,
 				6B5EB4A5274071F40057CFAB /* SearchCoordinator.swift in Sources */,
+				6BF566032741235200FB1BD8 /* FavoriteProtocol.swift in Sources */,
 				6B5EB4C4274083CD0057CFAB /* EmptyComponent.swift in Sources */,
 				6B5EB5982740EBB00057CFAB /* DateFormatType.swift in Sources */,
+				6BF566172741280800FB1BD8 /* ListTypeAction.swift in Sources */,
 				6B5EB468274056520057CFAB /* NetworkManager.swift in Sources */,
 				6B5EB5482740C89C0057CFAB /* DetailViewController.swift in Sources */,
 				6B5EB5012740AC0F0057CFAB /* WeatherSearch.swift in Sources */,
@@ -755,16 +801,19 @@
 				6B5EB486274057980057CFAB /* HTTPMethodType.swift in Sources */,
 				6B5EB51E2740B8450057CFAB /* ListWeatherViewModel.swift in Sources */,
 				6B5EB4FC2740ABB90057CFAB /* SearchServices.swift in Sources */,
+				6BF566092741236700FB1BD8 /* DatabaseProtocol.swift in Sources */,
 				6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */,
 				6B5EB4D1274096E10057CFAB /* ErrorComponent.swift in Sources */,
 				6B5EB43C274049CC0057CFAB /* SplashScreenViewModel.swift in Sources */,
 				6B5EB55A2740CB180057CFAB /* DetailState.swift in Sources */,
 				6B5EB440274049EA0057CFAB /* SplashScreenCoordinator.swift in Sources */,
 				6B5EB54C2740C8A50057CFAB /* DetailViewModel.swift in Sources */,
+				6B5EB5A927411BE60057CFAB /* ObjectRepresentable.swift in Sources */,
 				6B5EB58E2740E5300057CFAB /* Date+Extension.swift in Sources */,
 				6B5EB52D2740BC700057CFAB /* WeatherCell.swift in Sources */,
 				6B5EB5922740E5EF0057CFAB /* Calendar+Extension.swift in Sources */,
 				6B5EB50E2740B1BB0057CFAB /* ListWeatherComponent.swift in Sources */,
+				6B5EB5B327411C360057CFAB /* JSONEncoder+Extension.swift in Sources */,
 				6B5EB3B527403BE60057CFAB /* SceneDelegate.swift in Sources */,
 				6B5EB5502740C8B20057CFAB /* DetailCoordinator.swift in Sources */,
 				6B5EB45127404B7C0057CFAB /* UIFont+Extension.swift in Sources */,
@@ -772,10 +821,13 @@
 				6B5EB4AB2740720F0057CFAB /* SearchViewModel.swift in Sources */,
 				6B5EB44527404A250057CFAB /* UIView+Extension.swift in Sources */,
 				6B5EB5882740DFE00057CFAB /* Double+Extension.swift in Sources */,
+				6BF5660D2741252000FB1BD8 /* FavoritesState.swift in Sources */,
+				6BF566112741268F00FB1BD8 /* FavoritesContent.swift in Sources */,
 				6B5EB57A2740D56F0057CFAB /* DetailResources.swift in Sources */,
 				6B5EB5822740DFB20057CFAB /* NumberFormatter+Extension.swift in Sources */,
 				6B5EB4F52740A7CC0057CFAB /* Dynamic.swift in Sources */,
 				6B5EB5542740C8C10057CFAB /* DetailContent.swift in Sources */,
+				6B5EB5BB27411CFA0057CFAB /* FavoriteManager.swift in Sources */,
 				6B5EB5762740D5600057CFAB /* DetailServices.swift in Sources */,
 				6B5EB47E274057260057CFAB /* DateFormatter+Extension.swift in Sources */,
 				6B5EB476274056B50057CFAB /* ErrorRequest.swift in Sources */,
