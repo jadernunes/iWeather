@@ -11,6 +11,7 @@ final class FavoritesContent: UIView {
 
     // MARK: - Elements
 
+    weak var viewModel: FavoritesViewModelProtocol?
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
     private let listWeatherComponent: ListWeatherComponent = initElement()
@@ -32,6 +33,7 @@ final class FavoritesContent: UIView {
     // MARK: - Custom methods
 
     private func defineSubviews() {
+        errorComponent.delegate = self
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
@@ -47,6 +49,15 @@ extension FavoritesContent {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
         listWeatherComponent.anchor(self)
+    }
+}
+
+// MARK: - Error delegate
+
+extension FavoritesContent: ErrorComponentDelegate {
+
+    func willRetry() {
+        viewModel?.loadData()
     }
 }
 

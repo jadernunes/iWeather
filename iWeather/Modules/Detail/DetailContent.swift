@@ -11,6 +11,7 @@ final class DetailContent: UIView {
 
     // MARK: - Elements
 
+    weak var viewModel: DetailViewModelProtocol?
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
     private let infoComponent: InfoWeatherComponent = initElement()
@@ -32,6 +33,7 @@ final class DetailContent: UIView {
     // MARK: - Custom methods
 
     private func defineSubviews() {
+        errorComponent.delegate = self
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
@@ -47,6 +49,15 @@ extension DetailContent {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
         infoComponent.anchor(self)
+    }
+}
+
+// MARK: - Error delegate
+
+extension DetailContent: ErrorComponentDelegate {
+
+    func willRetry() {
+        viewModel?.loadData()
     }
 }
 

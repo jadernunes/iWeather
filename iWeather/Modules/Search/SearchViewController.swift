@@ -22,6 +22,8 @@ final class SearchViewController: UIViewController {
     init(viewModel: SearchViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+
+        content.viewModel = viewModel
     }
 
     @available(*, unavailable)
