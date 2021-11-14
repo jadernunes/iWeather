@@ -13,6 +13,10 @@ final class FavoritesViewController: UIViewController {
 
     private let viewModel: FavoritesViewModelProtocol
 
+    // MARK: - Elements
+
+    private let content = FavoritesContent()
+
     // MARK: - Life cycle
 
     init(viewModel: FavoritesViewModelProtocol) {
@@ -32,12 +36,27 @@ final class FavoritesViewController: UIViewController {
         createElements()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.loadData()
+    }
+
+    override func loadView() {
+        view = content
+    }
+
     // MARK: - Custom methods
 
     private func setupUI() {
         view.backgroundColor = .clSecondary
         configureNavigationBar()
         populateStaticInfo()
+        bindUI()
+    }
+
+    private func bindUI() {
+        bindState()
     }
 
     private func populateStaticInfo() {
@@ -65,5 +84,18 @@ extension FavoritesViewController {
                                            target: self,
                                            action: #selector(searchButtonPressed))
         navigationItem.rightBarButtonItems = [searchButton]
+    }
+}
+
+// MARK: - Binds
+
+extension FavoritesViewController {
+
+    private func bindState() {
+        viewModel.state.bindAndFire { [weak self] state in
+            DispatchQueue.main.async {
+                self?.content.render(with: state)
+            }
+        }
     }
 }

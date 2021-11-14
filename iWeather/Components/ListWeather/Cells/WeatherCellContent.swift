@@ -70,7 +70,6 @@ extension WeatherCellContent: Component {
     }
 
     func render(with configuration: Configuration) {
-
         switch configuration {
             case .content(let viewModel):
                 self.viewModel = viewModel
@@ -83,6 +82,7 @@ extension WeatherCellContent: Component {
 
     private func populdateUI() {
         titleLabel.text = viewModel?.title
+        addButton.isVisible = viewModel?.shouldShowAdd ?? false
     }
 }
 

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct WeatherSearch: Codable {
+struct WeatherSearch: ObjectRepresentable {
+    static var key: String { "weatherSearch" }
+
     let distance: Int64
     let title: String
     let woeid: Int64

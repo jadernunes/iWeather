@@ -28,8 +28,4 @@ final class DetailCoordinator: DetailCoordinatorProtocol {
         let viewController = DetailViewController(viewModel: viewModel)
         presenter?.pushViewController(viewController, animated: true)
     }
-
-    func close() {
-        presenter?.popToRootViewController(animated: true)
-    }
 }
