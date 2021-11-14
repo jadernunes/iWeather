@@ -10,7 +10,9 @@
 
 "error.internal" = "Internal error";
 "error.noInternet" = "No internet";
+"error.title" = "Something wrong";
 "noData.title" = "No data";
+"retry.title" = "Retry";
 
 // MARK: - Favorite
 
