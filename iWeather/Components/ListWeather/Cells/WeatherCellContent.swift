@@ -25,7 +25,7 @@ final class WeatherCellContent: UIView {
     }
     private let titleLabel: UILabel = initElement {
         $0.font = .subTitle
-        $0.textColor = .clPrimary
+        $0.textColor = .clBlack
     }
 
     // MARK: - Life cycle
