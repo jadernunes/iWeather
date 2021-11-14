@@ -1,25 +1,25 @@
 //
-//  SearchViewController.swift
+//  DetailViewController.swift
 //  iWeather
 //
-//  Created by Jader Nunes on 13/11/21.
+//  Created by Jader Nunes on 14/11/21.
 //
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     // MARK: - Attributes
 
-    private let viewModel: SearchViewModelProtocol
+    private let viewModel: DetailViewModelProtocol
 
     // MARK: - Elements
 
-    private let content = SearchContent()
+    private let content = DetailContent()
 
     // MARK: - Life cycle
 
-    init(viewModel: SearchViewModelProtocol) {
+    init(viewModel: DetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,7 +60,7 @@ final class SearchViewController: UIViewController {
 
 // MARK: - Binds
 
-extension SearchViewController {
+extension DetailViewController {
 
     private func bindState() {
         viewModel.state.bindAndFire { [weak self] state in

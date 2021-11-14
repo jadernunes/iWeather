@@ -1,19 +1,18 @@
 //
-//  SearchContent.swift
+//  DetailContent.swift
 //  iWeather
 //
-//  Created by Jader Nunes on 13/11/21.
+//  Created by Jader Nunes on 14/11/21.
 //
 
 import UIKit
 
-final class SearchContent: UIView {
+final class DetailContent: UIView {
 
     // MARK: - Elements
 
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
-    private let listWeatherComponent: ListWeatherComponent = initElement()
 
     // MARK: - Life cycle
 
@@ -35,43 +34,37 @@ final class SearchContent: UIView {
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
-        addSubview(listWeatherComponent)
     }
 }
 
 // MARK: - Constraints
 
-extension SearchContent {
+extension DetailContent {
 
     private func defineSubviewsConstraints() {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
-        listWeatherComponent.anchor(self)
     }
 }
 
 // MARK: - Component
 
-extension SearchContent: Component {
+extension DetailContent: Component {
 
-    func render(with configuration: SearchState) {
+    func render(with configuration: DetailState) {
         switch configuration {
             case .idle:
                 stopLoader()
-                listWeatherComponent.isHidden = true
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
             case .loading:
                 startLoader(style: .large)
-                listWeatherComponent.isHidden = true
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
-            case .content(let subViewModel):
+            case .content:
                 stopLoader()
-                listWeatherComponent.isVisible = true
-                listWeatherComponent.render(with: .content(viewModel: subViewModel))
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
@@ -79,13 +72,11 @@ extension SearchContent: Component {
                 stopLoader()
                 errorComponent.isVisible = true
                 emptyComponent.isHidden = true
-                listWeatherComponent.isHidden = true
 
             case .empty:
                 stopLoader()
-                emptyComponent.isVisible = true
                 errorComponent.isHidden = true
-                listWeatherComponent.isHidden = true
+                emptyComponent.isVisible = true
         }
     }
 }

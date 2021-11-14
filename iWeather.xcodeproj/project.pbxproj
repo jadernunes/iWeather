@@ -59,6 +59,11 @@
 		6B5EB5322740BC8E0057CFAB /* WeatherCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5312740BC8E0057CFAB /* WeatherCellContent.swift */; };
 		6B5EB5382740C0520057CFAB /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5372740C0520057CFAB /* UITableView+Extension.swift */; };
 		6B5EB53C2740C0700057CFAB /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB53B2740C0700057CFAB /* NSObject+Extension.swift */; };
+		6B5EB5482740C89C0057CFAB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5472740C89C0057CFAB /* DetailViewController.swift */; };
+		6B5EB54C2740C8A50057CFAB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB54B2740C8A50057CFAB /* DetailViewModel.swift */; };
+		6B5EB5502740C8B20057CFAB /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB54F2740C8B20057CFAB /* DetailCoordinator.swift */; };
+		6B5EB5542740C8C10057CFAB /* DetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5532740C8C10057CFAB /* DetailContent.swift */; };
+		6B5EB55A2740CB180057CFAB /* DetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5EB5592740CB180057CFAB /* DetailState.swift */; };
 		796659FC05E9F0E2F4211078 /* Pods_iWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */; };
 		CC76EC49BE93DAF50792706E /* Pods_iWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +137,11 @@
 		6B5EB5312740BC8E0057CFAB /* WeatherCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellContent.swift; sourceTree = "<group>"; };
 		6B5EB5372740C0520057CFAB /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		6B5EB53B2740C0700057CFAB /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		6B5EB5472740C89C0057CFAB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6B5EB54B2740C8A50057CFAB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		6B5EB54F2740C8B20057CFAB /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		6B5EB5532740C8C10057CFAB /* DetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContent.swift; sourceTree = "<group>"; };
+		6B5EB5592740CB180057CFAB /* DetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailState.swift; sourceTree = "<group>"; };
 		73FAD8A0DB8E4A64AA655FEF /* Pods-iWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWeather.release.xcconfig"; path = "Target Support Files/Pods-iWeather/Pods-iWeather.release.xcconfig"; sourceTree = "<group>"; };
 		78F73A498823D3F15A493FE8 /* Pods_iWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		829925DE8AB1DB40BDEA30C6 /* Pods_iWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +250,7 @@
 				6B5EB436274049980057CFAB /* SplahScreen */,
 				6B5EB491274069AB0057CFAB /* Favorites */,
 				6B5EB4A3274071E20057CFAB /* Search */,
+				6B5EB5462740C8340057CFAB /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -407,6 +418,18 @@
 				6B5EB5282740BC620057CFAB /* WeatherCellViewModel.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6B5EB5462740C8340057CFAB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6B5EB5592740CB180057CFAB /* DetailState.swift */,
+				6B5EB5532740C8C10057CFAB /* DetailContent.swift */,
+				6B5EB5472740C89C0057CFAB /* DetailViewController.swift */,
+				6B5EB54B2740C8A50057CFAB /* DetailViewModel.swift */,
+				6B5EB54F2740C8B20057CFAB /* DetailCoordinator.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		F6A593306935A510BFE16888 /* Frameworks */ = {
@@ -661,6 +684,7 @@
 				6B5EB4A5274071F40057CFAB /* SearchCoordinator.swift in Sources */,
 				6B5EB4C4274083CD0057CFAB /* EmptyComponent.swift in Sources */,
 				6B5EB468274056520057CFAB /* NetworkManager.swift in Sources */,
+				6B5EB5482740C89C0057CFAB /* DetailViewController.swift in Sources */,
 				6B5EB5012740AC0F0057CFAB /* WeatherSearch.swift in Sources */,
 				6B5EB472274056930057CFAB /* HTTPStatusCode.swift in Sources */,
 				6B5EB41E274046740057CFAB /* Coordinator.swift in Sources */,
@@ -674,14 +698,18 @@
 				6B5EB4242740469D0057CFAB /* AppCoordinator.swift in Sources */,
 				6B5EB4D1274096E10057CFAB /* ErrorComponent.swift in Sources */,
 				6B5EB43C274049CC0057CFAB /* SplashScreenViewModel.swift in Sources */,
+				6B5EB55A2740CB180057CFAB /* DetailState.swift in Sources */,
 				6B5EB440274049EA0057CFAB /* SplashScreenCoordinator.swift in Sources */,
+				6B5EB54C2740C8A50057CFAB /* DetailViewModel.swift in Sources */,
 				6B5EB52D2740BC700057CFAB /* WeatherCell.swift in Sources */,
 				6B5EB50E2740B1BB0057CFAB /* ListWeatherComponent.swift in Sources */,
 				6B5EB3B527403BE60057CFAB /* SceneDelegate.swift in Sources */,
+				6B5EB5502740C8B20057CFAB /* DetailCoordinator.swift in Sources */,
 				6B5EB45127404B7C0057CFAB /* UIFont+Extension.swift in Sources */,
 				6B5EB4AB2740720F0057CFAB /* SearchViewModel.swift in Sources */,
 				6B5EB44527404A250057CFAB /* UIView+Extension.swift in Sources */,
 				6B5EB4F52740A7CC0057CFAB /* Dynamic.swift in Sources */,
+				6B5EB5542740C8C10057CFAB /* DetailContent.swift in Sources */,
 				6B5EB47E274057260057CFAB /* DateFormatter+Extension.swift in Sources */,
 				6B5EB476274056B50057CFAB /* ErrorRequest.swift in Sources */,
 				6B5EB47A2740570C0057CFAB /* JSONDecoder+Extension.swift in Sources */,

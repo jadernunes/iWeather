@@ -32,7 +32,9 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     }
 
     func openDetail(woeid: Int) {
-        //TODO: Handle
+        guard let navigation = presenter else { return }
+        let coordinator = DetailCoordinator(presenter: navigation)
+        coordinator.start(woeid: woeid)
     }
 
     func close() {
