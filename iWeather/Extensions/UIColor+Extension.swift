@@ -18,8 +18,8 @@ extension UIColor {
     static let clBlack = black
 
     /// HEX: #FF5229
-    static let clPrimary = UIColor(named: "primary") ?? white
+    static let clPrimary = R.color.primary()
 
     /// HEX: #FFFAF5
-    static let clBeige = UIColor(named: "beige") ?? white
+    static let clBeige = R.color.beige()
 }
