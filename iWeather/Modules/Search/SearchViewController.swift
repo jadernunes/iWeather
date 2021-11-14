@@ -33,11 +33,6 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
         viewModel.loadData()
     }
 

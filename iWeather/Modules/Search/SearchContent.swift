@@ -58,29 +58,34 @@ extension SearchContent: Component {
         switch configuration {
             case .idle:
                 stopLoader()
+                listWeatherComponent.isHidden = true
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
             case .loading:
                 startLoader(style: .large)
+                listWeatherComponent.isHidden = true
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
             case .content(let subViewModel):
                 stopLoader()
+                listWeatherComponent.isVisible = true
+                listWeatherComponent.render(with: .content(viewModel: subViewModel))
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
-                listWeatherComponent.render(with: .content(viewModel: subViewModel))
 
             case .error:
                 stopLoader()
                 errorComponent.isVisible = true
                 emptyComponent.isHidden = true
+                listWeatherComponent.isHidden = true
 
             case .empty:
                 stopLoader()
-                errorComponent.isHidden = true
                 emptyComponent.isVisible = true
+                errorComponent.isHidden = true
+                listWeatherComponent.isHidden = true
         }
     }
 }
