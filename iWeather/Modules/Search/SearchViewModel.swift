@@ -19,6 +19,7 @@ final class SearchViewModel: SearchViewModelProtocol {
     private let coordinator: SearchCoordinatorProtocol?
     private let service: SearchServicesProtocol
     private let favorite: FavoriteProtocol
+    private let locationManager: LocationManagerProtocol
 
     var title: String { R.string.localizable.searchTitle() }
     let state = Dynamic<SearchState>(.idle)
@@ -27,27 +28,23 @@ final class SearchViewModel: SearchViewModelProtocol {
 
     init(coordinator: SearchCoordinatorProtocol? = nil,
          service: SearchServicesProtocol = SearchServices(),
-         favorite: FavoriteProtocol = FavoriteManager()) {
+         favorite: FavoriteProtocol = FavoriteManager(),
+         locationManager: LocationManagerProtocol = LocationManager()) {
         self.coordinator = coordinator
         self.service = service
         self.favorite = favorite
+        self.locationManager = locationManager
+        self.locationManager.delegate = self
     }
 
     // MARK: - Custom methods
 
     func loadData() {
         state.value = .loading
+        locationManager.requestLocation()
+    }
 
-        //TODO: Change later.
-        /*
-         We'll use CLLocation to load the location from user
-         1. Check location permission
-         2. If user didn't allowed, show alert to open settings from the app
-         3. If enalbe get right info
-         */
-        let lat: Double = -30.057203
-        let long: Double = -51.150769
-
+    private func requestData(lat: Double, long: Double) {
         service.request(lat: lat, long: long) { [weak self] response in
             switch response {
                 case .success(let data):
@@ -74,5 +71,18 @@ extension SearchViewModel: ListWeatherDelegate {
         guard let weather = weather else { return }
         favorite.add(model: weather)
         coordinator?.close()
+    }
+}
+
+// MARK: - Location delegate
+
+extension SearchViewModel: LocationManagerDelegate {
+
+    func didReceiveError() {
+        state.value = .error
+    }
+
+    func didReceiveLocation(lat: Double, long: Double) {
+        requestData(lat: lat, long: long)
     }
 }
