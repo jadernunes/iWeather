@@ -7,16 +7,13 @@
 
 import UIKit
 
-enum SearchState {
-    case idle, loading, empty, error, content
-}
-
 final class SearchContent: UIView {
 
     // MARK: - Elements
 
     private let errorComponent: ErrorComponent = initElement()
     private let emptyComponent: EmptyComponent = initElement()
+    private let listWeatherComponent: ListWeatherComponent = initElement()
 
     // MARK: - Life cycle
 
@@ -38,6 +35,7 @@ final class SearchContent: UIView {
         backgroundColor = .clSecondary
         addSubview(errorComponent)
         addSubview(emptyComponent)
+        addSubview(listWeatherComponent)
     }
 }
 
@@ -48,6 +46,7 @@ extension SearchContent {
     private func defineSubviewsConstraints() {
         errorComponent.anchor(self)
         emptyComponent.anchor(self)
+        listWeatherComponent.anchor(self)
     }
 }
 
@@ -67,10 +66,11 @@ extension SearchContent: Component {
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
 
-            case .content:
+            case .content(let subViewModel):
                 stopLoader()
                 errorComponent.isHidden = true
                 emptyComponent.isHidden = true
+                listWeatherComponent.render(with: .content(viewModel: subViewModel))
 
             case .error:
                 stopLoader()
