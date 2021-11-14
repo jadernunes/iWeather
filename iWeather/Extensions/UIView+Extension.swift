@@ -11,16 +11,14 @@ import UIKit
 
 extension UIView {
 
-    func centerInSuperview() -> UIView {
+    func centerInSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
-        guard let superview = superview else { return self }
+        guard let superview = superview else { return }
 
         NSLayoutConstraint.activate([
             centerYAnchor.constraint(equalTo: superview.centerYAnchor),
             centerXAnchor.constraint(equalTo: superview.centerXAnchor)
         ])
-
-        return self
     }
 
     func anchor(_ view: UIView, distance: CGFloat = 8) {
@@ -62,5 +60,13 @@ extension UIView {
 
     func stopLoader() {
         viewWithTag(tagLoader)?.removeFromSuperview()
+    }
+
+    func addShadow(_ offset: CGSize = .init(width: -0.05, height: 0.05))  {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = offset
+        layer.shadowRadius = 2
+        layer.masksToBounds = false
     }
 }
