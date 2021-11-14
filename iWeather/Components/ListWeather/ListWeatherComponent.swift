@@ -96,11 +96,11 @@ extension ListWeatherComponent {
 
 extension ListWeatherComponent: Component {
 
-    enum State {
+    enum ListWeatherState {
         case reload, content(viewModel: ListWeatherViewModelProtocol)
     }
 
-    func render(with configuration: State) {
+    func render(with configuration: ListWeatherState) {
         switch configuration {
             case .content(let viewModel):
                 self.viewModel = viewModel
