@@ -11,9 +11,9 @@ final class Config {
 
     // MARK: - Attributes
 
-    static let baseURL: String = {
+    static var baseURL: String {
         configKey(key: "urlbase")
-    }()
+    }
 
     // MARK: - Custom methods
 
@@ -24,5 +24,9 @@ final class Config {
             let value = dictionary[key] as? String
         else { return "" }
         return value
+    }
+
+    static func urlImage(imageName: String) -> String {
+        baseURL + "static/img/weather/png/64/\(imageName).png"
     }
 }
