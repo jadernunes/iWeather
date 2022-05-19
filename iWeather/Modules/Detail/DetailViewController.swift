@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class DetailViewController: UIViewController {
 
     // MARK: - Attributes
 
     private let viewModel: DetailViewModelProtocol
+    private var cancelableBag = Set<AnyCancellable>()
 
     // MARK: - Elements
 
@@ -47,16 +49,12 @@ final class DetailViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .clSecondary
         configureNavigationBar()
-        populateStaticInfo()
         bindUI()
     }
 
     private func bindUI() {
+        bindTitle()
         bindState()
-    }
-
-    private func populateStaticInfo() {
-        title = viewModel.title
     }
 }
 
@@ -64,9 +62,17 @@ final class DetailViewController: UIViewController {
 
 extension DetailViewController {
 
+    private func bindTitle() {
+        viewModel.title
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.title = $0 }
+            .store(in: &cancelableBag)
+    }
+
     private func bindState() {
-        viewModel.state.bindAndFire { [weak self] state in
-            self?.content.render(with: state)
-        }
+        viewModel.state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.content.render(with: $0) }
+            .store(in: &cancelableBag)
     }
 }

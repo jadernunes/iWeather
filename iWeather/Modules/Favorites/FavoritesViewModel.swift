@@ -6,10 +6,11 @@
 //
 
 import Rswift
+import Combine
 
 protocol FavoritesViewModelProtocol: AnyObject {
-    var title: String { get }
-    var state: Dynamic<FavoritesState> { get }
+    var title: CurrentValueSubject<String, Never> { get }
+    var state: CurrentValueSubject<FavoritesState, Never> { get }
 
     func loadData()
     func openSearch()
@@ -22,8 +23,8 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
     private let coordinator: FavoritesCoordinatorProtocol?
     private let favorite: FavoriteProtocol
 
-    var title: String { R.string.localizable.favoritesTitle() }
-    let state = Dynamic<FavoritesState>(.idle)
+    let title = CurrentValueSubject<String, Never>(R.string.localizable.favoritesTitle())
+    let state = CurrentValueSubject<FavoritesState, Never>(.idle)
 
     // MARK: - Life cycle
 
@@ -36,7 +37,7 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
     // MARK: - Custom methods
 
     func loadData() {
-        state.value = .loading
+        state.send(.loading)
 
         DispatchQueue
             .global(qos: DispatchQoS.QoSClass.default)
@@ -44,9 +45,9 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
                 let data = self?.favorite.loadAll() ?? []
                 let viewModel = ListWeatherViewModel(data: data, actions: [.edit])
                 viewModel.delegate = self
-                self?.state.value = data.count > 0
-                    ? .content(viewModel: viewModel)
-                    : .empty
+                self?.state.send(data.count > 0
+                                 ? .content(viewModel: viewModel)
+                                 : .empty)
             }
     }
 

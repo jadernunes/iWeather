@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class FavoritesViewController: UIViewController {
 
     // MARK: - Attributes
 
     private let viewModel: FavoritesViewModelProtocol
+    private var cancelableBag = Set<AnyCancellable>()
 
     // MARK: - Elements
 
@@ -53,16 +55,12 @@ final class FavoritesViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .clSecondary
         configureNavigationBar()
-        populateStaticInfo()
         bindUI()
     }
 
     private func bindUI() {
+        bindTitle()
         bindState()
-    }
-
-    private func populateStaticInfo() {
-        title = viewModel.title
     }
 
     // MARK: - Actions
@@ -93,11 +91,17 @@ extension FavoritesViewController {
 
 extension FavoritesViewController {
 
+    private func bindTitle() {
+        viewModel.title
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.title = $0 }
+            .store(in: &cancelableBag)
+    }
+
     private func bindState() {
-        viewModel.state.bindAndFire { [weak self] state in
-            DispatchQueue.main.async {
-                self?.content.render(with: state)
-            }
-        }
+        viewModel.state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.content.render(with: $0) }
+            .store(in: &cancelableBag)
     }
 }

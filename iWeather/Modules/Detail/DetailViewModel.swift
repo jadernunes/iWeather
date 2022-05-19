@@ -5,9 +5,11 @@
 //  Created by Jader Nunes on 14/11/21.
 //
 
+import Combine
+
 protocol DetailViewModelProtocol: AnyObject {
-    var title: String { get }
-    var state: Dynamic<DetailState> { get }
+    var title: CurrentValueSubject<String, Never> { get }
+    var state: CurrentValueSubject<DetailState, Never> { get }
 
     func loadData()
 }
@@ -20,8 +22,8 @@ final class DetailViewModel: DetailViewModelProtocol {
     private let coordinator: DetailCoordinatorProtocol?
     private let service: DetailServicesProtocol
 
-    var title: String { R.string.localizable.detailTitle() }
-    let state = Dynamic<DetailState>(.idle)
+    let title = CurrentValueSubject<String, Never>(R.string.localizable.detailTitle())
+    let state = CurrentValueSubject<DetailState, Never>(.idle)
 
     // MARK: - Life cycle
 
@@ -36,13 +38,13 @@ final class DetailViewModel: DetailViewModelProtocol {
     // MARK: - Custom methods
 
     func loadData() {
-        state.value = .loading
-        service.request(woeid: woeid) { [weak self] response in
-            switch response {
-                case .success(let data):
-                    self?.state.value = .content(viewModel: InfoWeatherViewModel(weather: data))
-                case .failure(_ , _):
-                    self?.state.value = .error
+        state.send(.loading)
+        service.request(woeid: woeid) { [weak self] in
+            switch $0 {
+            case .success(let data):
+                self?.state.send(.content(viewModel: InfoWeatherViewModel(weather: data)))
+            case .failure:
+                self?.state.send(.error)
             }
         }
     }

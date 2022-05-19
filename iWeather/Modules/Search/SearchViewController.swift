@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class SearchViewController: UIViewController {
 
     // MARK: - Attributes
 
     private let viewModel: SearchViewModelProtocol
+    private var cancelableBag = Set<AnyCancellable>()
 
     // MARK: - Elements
 
@@ -47,16 +49,12 @@ final class SearchViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .clSecondary
         configureNavigationBar()
-        populateStaticInfo()
         bindUI()
     }
 
     private func bindUI() {
+        bindTitle()
         bindState()
-    }
-
-    private func populateStaticInfo() {
-        title = viewModel.title
     }
 }
 
@@ -64,9 +62,17 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController {
 
+    private func bindTitle() {
+        viewModel.title
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.title = $0 }
+            .store(in: &cancelableBag)
+    }
+
     private func bindState() {
-        viewModel.state.bindAndFire { [weak self] state in
-            self?.content.render(with: state)
-        }
+        viewModel.state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.content.render(with: $0) }
+            .store(in: &cancelableBag)
     }
 }
